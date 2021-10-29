@@ -1,4 +1,8 @@
 ping -c 4 www.google.com
+ip address
+ip link set up enp0s3
+systemctl start dhcpcd.service
+ping -c 4 www.google.com
 timedatectl set-ntp true
 fdisk -1
 cfdisk /dev/sda
@@ -14,3 +18,28 @@ genfstab -U /mnt >> /mnt/etc/fstab
 arch-chrrot /mnt
 #Insert region and city for your location
 ln -sf /usr/share/zoneinfo/Region/City /etc/localtime
+pacman -S vim
+vim /etc/locale.conf
+#for root password
+passwd
+pacman -Syu openssh
+systemctl enable sshd
+pacman --sync sudo
+#Repeat for the users you need for your VM
+useradd --create-home username
+#Expires users password so when they login they will 
+#be prompted to change it.
+passwd --expire username
+#Add users to wheel group if they need sudo premissions
+usermod --append --groups wheel user
+#Edit /etc/sudoers file using vim. Uncomment '%wheel ALL=(ALL) ALL'
+vim /etc/sudoers
+#Changing the default shell to zsh.
+pacman -S zsh
+chsh -s /usr/bin/zsh
+#Creating aliases
+alias l='ls -lah'
+alias c='clear'
+alias chvim='vim ~/.zshrc'
+#Save them by added them to the zshrc file using vim.
+vim ~/.zshrc
