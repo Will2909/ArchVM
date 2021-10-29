@@ -1,0 +1,16 @@
+ping -c 4 www.google.com
+timedatectl set-ntp true
+fdisk -1
+cfdisk /dev/sda
+mkswap /dev/sda3
+swapon /dev/sda3
+mkfs.ext4 /dev/sda2
+mkfs.fat -F32 /dev/sda2/mnt
+mount /dev/sda2 /mnt
+mkdir /mnt/boot
+mount /dev/sda1 /mnt/boot
+pacstrap /mnt base linux linux-firmware
+genfstab -U /mnt >> /mnt/etc/fstab
+arch-chrrot /mnt
+#Insert region and city for your location
+ln -sf /usr/share/zoneinfo/Region/City /etc/localtime
