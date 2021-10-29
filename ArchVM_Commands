@@ -59,3 +59,8 @@ pacman -S pulseaudio pulseaudio-alsa pavucontrol
 pacman -S gnome-terminal gnome-system-monitor
 pacman -S firefox vlc audacious
 pacman -S libreoffice
+#For the video submission I will install yay
+sudo pacman -S --needed git base-devel
+git clone https://aur.archlinux.org/yay.git
+cd yay
+makepkg -si
