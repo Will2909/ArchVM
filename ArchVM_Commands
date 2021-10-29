@@ -43,3 +43,19 @@ alias c='clear'
 alias chvim='vim ~/.zshrc'
 #Save them by added them to the zshrc file using vim.
 vim ~/.zshrc
+#Installing a GUI
+lspci | grep -e VGA
+pacman -Syyu
+pacman -S nividia nividia-utils nvidia-settings
+pacman -S xorg xterm xorg-xinit
+startx
+pacman -S plasma kdeplasma-addons
+pacman -S gdm
+systemctl enable gdm
+systemctl start gdm
+#This is just some additional add-ons that I used because
+#I wanted to check them out.
+pacman -S pulseaudio pulseaudio-alsa pavucontrol
+pacman -S gnome-terminal gnome-system-monitor
+pacman -S firefox vlc audacious
+pacman -S libreoffice
