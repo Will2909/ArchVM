@@ -1,5 +1,3 @@
-###Setup
-
 I transfer the ISO file from the flash drive passed around class. Using the ISO file created started the Arch system in VM Workstation. I gave the VM 20 Gb of storage space, 4 Gb of RAM, and 2 processors. I also ran the Arch VM in UEFI mode.
 
 To setup UEFI mode, I went to the library, clicked on settings, went to options, and then under advanced, I changed the firmware type to UEFI.
@@ -138,8 +136,6 @@ alias chvim=’vim ~/.zshrc’
 vim ~/.zshrc
 ```
 
-###Customization
-
 I installed a GUI for my Arch VM. I started by installing a graphics driver, then installed the display server Xorg for the desktop environment. After both of those installations, I installed the desktop environment.  For my VM I chose KDE Plasma for my desktop environment. After installing the desktop environment, I also installed the display manager. I used Gnome display manager for this build.
 ```markdown
 lspci | grep -e VGA
@@ -169,9 +165,6 @@ cd yay
 makepkg -si
 ```
 
-For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
-
-### Jekyll Themes
 
 Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/Will2909/ArchVM/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
 
